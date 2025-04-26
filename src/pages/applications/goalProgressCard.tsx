@@ -1,4 +1,5 @@
 import { Card, Group, Progress, Stack, Text, Title } from '@mantine/core'
+import { Link } from 'react-router-dom'
 
 import { useGeneratedApplications } from '../../hooks/useGeneratedApplications'
 import { CREATE_NEW } from '../../constants'
@@ -19,14 +20,9 @@ const GoalProgressCard = () => {
           <Text c="dimmed" ta="center">
             Generate and send out couple more job applications today to get hired faster
           </Text>
-          <ActionButton
-            iconType="create"
-            component="a"
-            text={CREATE_NEW}
-            href="/new-application"
-            width={190}
-            size="xl"
-          />
+          <Link to="/new-application">
+            <ActionButton iconType="create" text={CREATE_NEW} width={190} size="xl" />
+          </Link>
         </Stack>
         <Stack gap={8} align="center">
           <Group justify="center" gap={8}>

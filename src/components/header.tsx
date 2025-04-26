@@ -1,5 +1,6 @@
 import { ActionIcon, Flex, Image } from '@mantine/core'
 import { IconHome } from '@tabler/icons-react'
+import { Link } from 'react-router-dom'
 
 import { ApplicationProgress } from '../pages/applications/applicationProgress'
 
@@ -19,16 +20,11 @@ const Header = () => {
           justify={{ base: 'space-between', xs: 'center' }}
         >
           <ApplicationProgress />
-          <ActionIcon
-            variant="default"
-            size="lg"
-            radius="md"
-            aria-label="Home"
-            component="a"
-            href="/applications"
-          >
-            <IconHome stroke={1} />
-          </ActionIcon>
+          <Link to="/applications">
+            <ActionIcon variant="default" size="lg" radius="md" aria-label="Home">
+              <IconHome stroke={1} />
+            </ActionIcon>
+          </Link>
         </Flex>
       </Flex>
     </header>

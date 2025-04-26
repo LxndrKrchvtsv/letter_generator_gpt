@@ -4,7 +4,6 @@ import { useClipboard } from '@mantine/hooks'
 
 import { COPIED, COPY_TO_CLIPBOARD } from '../../constants'
 
-type component = 'a'
 type iconType = 'delete' | 'create' | 'copy'
 type buttonSize = 'sm' | 'md' | 'lg' | 'xl'
 
@@ -12,8 +11,6 @@ interface IconButtonProps {
   iconType: iconType
   text?: string
   onClick?: () => void
-  component?: component
-  href?: string
   disabled?: boolean
   size?: buttonSize
   width?: number
@@ -24,8 +21,6 @@ const ActionButton = ({
   text,
   iconType,
   onClick,
-  component,
-  href,
   disabled = false,
   size = 'md',
   width,
@@ -57,8 +52,6 @@ const ActionButton = ({
       leftSection={iconType !== 'copy' && icon}
       rightSection={iconType === 'copy' && icon}
       onClick={handleClick}
-      component={component}
-      href={component && href}
       disabled={disabled}
       style={{ alignItems: iconType === 'copy' ? 'flex-end' : 'center' }}
     >

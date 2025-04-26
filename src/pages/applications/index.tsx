@@ -1,4 +1,5 @@
 import { Divider, Flex, Group, Title } from '@mantine/core'
+import { Link } from 'react-router-dom'
 
 import GoalProgressCard from './goalProgressCard'
 import ApplicationsList from './applicationsList'
@@ -11,7 +12,9 @@ const Applications = () => {
       <Flex direction="column" gap={24}>
         <Group justify="space-between">
           <Title order={1}>Applications</Title>
-          <ActionButton iconType="create" component="a" text={CREATE_NEW} href="/new-application" />
+          <Link to="/new-application">
+            <ActionButton iconType="create" text={CREATE_NEW} />
+          </Link>
         </Group>
         <Divider />
         <ApplicationsList />
