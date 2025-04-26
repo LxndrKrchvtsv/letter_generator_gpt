@@ -1,5 +1,5 @@
 import { Textarea, TextInput } from '@mantine/core'
-import { ChangeEvent } from 'react'
+import { ChangeEvent, ReactNode } from 'react'
 
 import styles from './ui.module.css'
 
@@ -10,6 +10,7 @@ interface FormFieldProps {
   maxLength?: number
   rows?: number
   value?: string
+  error?: ReactNode
   onChange?: (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void
 }
 
@@ -20,6 +21,7 @@ const FormField = ({
   maxLength,
   rows,
   value,
+  error,
   onChange,
   ...restProps
 }: FormFieldProps) => {
@@ -36,6 +38,7 @@ const FormField = ({
           placeholder={placeholder}
           maxLength={maxLength}
           rows={rows}
+          error={error}
           onChange={onChange}
           {...restProps}
         />
@@ -45,6 +48,7 @@ const FormField = ({
           size="md"
           radius="md"
           label={label}
+          error={error}
           placeholder={placeholder}
           onChange={onChange}
           {...restProps}

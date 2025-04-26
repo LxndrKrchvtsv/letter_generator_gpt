@@ -25,6 +25,13 @@ export default tseslint.config(
       'jsx-a11y': jsxA11y,
       import: importPlugin,
     },
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
+    },
     rules: {
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
@@ -57,6 +64,16 @@ export default tseslint.config(
         {
           groups: ['builtin', 'external', 'internal', ['sibling', 'parent'], 'index'],
           'newlines-between': 'always',
+        },
+      ],
+      'import/extensions': [
+        'error',
+        'ignorePackages',
+        {
+          ts: 'never',
+          tsx: 'never',
+          js: 'never',
+          jsx: 'never',
         },
       ],
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],

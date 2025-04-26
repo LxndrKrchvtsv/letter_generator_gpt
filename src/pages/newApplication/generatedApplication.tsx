@@ -1,8 +1,8 @@
 import { Box, Paper, ScrollArea, Text } from '@mantine/core'
 
-import { AnimatedSVGLoadingIcon } from '../../components/ui/animatedSVGLoadingIcon.tsx'
-import ActionButton from '../../components/ui/actionButton.tsx'
-import { GENERATED_APPLICATION_PLACEHOLDER } from '../../constants.ts'
+import { AnimatedSVGLoadingIcon } from '../../components/ui/animatedSVGLoadingIcon'
+import ActionButton from '../../components/ui/actionButton'
+import { GENERATED_APPLICATION_PLACEHOLDER } from '../../constants'
 
 interface ApplicationPreviewProps {
   generatedText?: string

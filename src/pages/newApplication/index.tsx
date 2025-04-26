@@ -1,13 +1,13 @@
 import { Divider, Grid, Stack } from '@mantine/core'
 import { useCallback, useState } from 'react'
 
-import ApplicationForm from './applicationForm.tsx'
-import ApplicationTitle from './applicationTitle.tsx'
-import GeneratedApplication from './generatedApplication.tsx'
-import { useDebouncedState } from '../../hooks/useDebounceState.ts'
-import { ApplicationTitleType, FormApplicationInfo } from '../../types.ts'
-import { generateApplicationLetter } from '../../utils/generateApplicationLetter.ts'
-import { sessionStorageService } from '../../services/sessionStorage.ts'
+import ApplicationForm from './applicationForm'
+import ApplicationTitle from './applicationTitle'
+import GeneratedApplication from './generatedApplication'
+import { useDebouncedState } from '../../hooks/useDebounceState'
+import { ApplicationTitleType, FormApplicationInfo } from '../../types'
+import { generateApplicationLetter } from '../../utils/generateApplicationLetter'
+import { sessionStorageService } from '../../services/sessionStorage'
 
 const NewApplication = () => {
   const [jobTitle, setJobTitle] = useDebouncedState<string>('', 500)

@@ -1,8 +1,8 @@
 import { Card, Group, Progress, Stack, Text, Title } from '@mantine/core'
 
-import { useGeneratedApplications } from '../../hooks/useGeneratedApplications.ts'
-import { CREATE_NEW } from '../../constants.ts'
-import ActionButton from '../../components/ui/actionButton.tsx'
+import { useGeneratedApplications } from '../../hooks/useGeneratedApplications'
+import { CREATE_NEW } from '../../constants'
+import ActionButton from '../../components/ui/actionButton'
 
 const GoalProgressCard = () => {
   const { maxApplications, currentNumber } = useGeneratedApplications()

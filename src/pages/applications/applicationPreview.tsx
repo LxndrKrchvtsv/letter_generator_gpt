@@ -1,9 +1,9 @@
 import { Flex, Paper } from '@mantine/core'
 
-import TextPreview from '../../components/ui/textPreview.tsx'
-import { sessionStorageService } from '../../services/sessionStorage.ts'
-import ActionButton from '../../components/ui/actionButton.tsx'
-import { DELETE } from '../../constants.ts'
+import TextPreview from '../../components/ui/textPreview'
+import { sessionStorageService } from '../../services/sessionStorage'
+import ActionButton from '../../components/ui/actionButton'
+import { DELETE } from '../../constants'
 
 interface ApplicationPreviewProps {
   text: string

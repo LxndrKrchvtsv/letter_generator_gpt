@@ -23,6 +23,9 @@ export const DELETE = 'Delete'
 export const GENERATED_APPLICATION_PLACEHOLDER =
   'Your personalized job application will appear here…'
 
+export const FORM_VALIDATION_MIN_LETTERS = 'At least 2 letters required'
+export const FORM_VALIDATION_MAX_LETTERS = 'Maximum letters are 1200'
+
 export const SYSTEM_ROLE_CONTENT =
   'You are a helpful assistant that writes professional job application letters based on user-provided job title, company, skills, and other personal information. Your tone is polite, formal, and enthusiastic.'
 export const OPEN_AI_MODEL = 'gpt-4.1'

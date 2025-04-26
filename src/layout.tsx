@@ -1,7 +1,7 @@
 import { Center, Container, Flex } from '@mantine/core'
 import { ReactNode } from 'react'
 
-import Header from './components/header.tsx'
+import Header from './components/header'
 
 interface LayoutProps {
   children?: ReactNode

@@ -1,9 +1,10 @@
 import { Button, Grid } from '@mantine/core'
 import { ChangeEvent, useCallback } from 'react'
-import { useForm } from '@mantine/form'
+import { useForm, zodResolver } from '@mantine/form'
 import { IconRepeat } from '@tabler/icons-react'
+import { z } from 'zod'
 
-import FormField from '../../components/ui/formField.tsx'
+import FormField from '../../components/ui/formField'
 import {
   ADDITIONAL_DETAILS,
   ADDITIONAL_DETAILS_PLACEHOLDER,
@@ -11,21 +12,30 @@ import {
   BUTTON_TEXT_TRY_AGAIN,
   COMPANY,
   COMPANY_PLACEHOLDER,
+  FORM_VALIDATION_MAX_LETTERS,
+  FORM_VALIDATION_MIN_LETTERS,
   JOB_TITLE,
   JOB_TITLE_PLACEHOLDER,
   SKILLS_DESCRIPTION,
   SKILLS_DESCRIPTION_PLACEHOLDER,
-} from '../../constants.ts'
-import { ApplicationTitleType, FormApplicationInfo } from '../../types.ts'
-import { areAllFieldsEmpty } from '../../utils/areAllFieldsEmpty.ts'
-import { sessionStorageService } from '../../services/sessionStorage.ts'
-import { useGeneratedApplications } from '../../hooks/useGeneratedApplications.ts'
+} from '../../constants'
+import { ApplicationTitleType, FormApplicationInfo } from '../../types'
+import { areAllFieldsEmpty } from '../../utils/areAllFieldsEmpty'
+import { sessionStorageService } from '../../services/sessionStorage'
+import { useGeneratedApplications } from '../../hooks/useGeneratedApplications'
 
 interface ApplicationFormProps {
   applicationHeaderUpdater: (field: ApplicationTitleType, value: string) => void
   submit: (formApplicationInfo: FormApplicationInfo) => void
   isLoading: boolean
 }
+
+const formSchema = z.object({
+  jobTitle: z.string().min(4, { message: FORM_VALIDATION_MIN_LETTERS }),
+  company: z.string().min(2, { message: FORM_VALIDATION_MIN_LETTERS }),
+  skills: z.string().min(2, { message: FORM_VALIDATION_MIN_LETTERS }),
+  additionalInfo: z.string().max(1200, { message: FORM_VALIDATION_MAX_LETTERS }),
+})
 
 const ApplicationForm = ({ applicationHeaderUpdater, submit, isLoading }: ApplicationFormProps) => {
   const { currentNumber } = useGeneratedApplications()
@@ -37,6 +47,7 @@ const ApplicationForm = ({ applicationHeaderUpdater, submit, isLoading }: Applic
       skills: '',
       additionalInfo: '',
     },
+    validate: zodResolver(formSchema),
   })
 
   const handleChange =
@@ -44,6 +55,7 @@ const ApplicationForm = ({ applicationHeaderUpdater, submit, isLoading }: Applic
       const value = e.currentTarget.value
 
       form.setFieldValue(field, value)
+
       applicationHeaderUpdater(field, value)
     }
 
@@ -66,6 +78,7 @@ const ApplicationForm = ({ applicationHeaderUpdater, submit, isLoading }: Applic
           <FormField
             onChange={handleChange('jobTitle')}
             label={JOB_TITLE}
+            error={form.errors.jobTitle}
             placeholder={JOB_TITLE_PLACEHOLDER}
             key={form.key('jobTitle')}
           />
@@ -75,6 +88,7 @@ const ApplicationForm = ({ applicationHeaderUpdater, submit, isLoading }: Applic
           <FormField
             onChange={handleChange('company')}
             label={COMPANY}
+            error={form.errors.company}
             placeholder={COMPANY_PLACEHOLDER}
             key={form.key('company')}
           />
@@ -84,6 +98,7 @@ const ApplicationForm = ({ applicationHeaderUpdater, submit, isLoading }: Applic
           <FormField
             label={SKILLS_DESCRIPTION}
             placeholder={SKILLS_DESCRIPTION_PLACEHOLDER}
+            error={form.errors.skills}
             key={form.key('skills')}
             {...form.getInputProps('skills')}
           />
@@ -93,6 +108,7 @@ const ApplicationForm = ({ applicationHeaderUpdater, submit, isLoading }: Applic
           <FormField
             label={ADDITIONAL_DETAILS}
             placeholder={ADDITIONAL_DETAILS_PLACEHOLDER}
+            error={form.errors.additionalInfo}
             isTextarea
             maxLength={1200}
             rows={8}

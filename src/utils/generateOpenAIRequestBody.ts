@@ -1,5 +1,5 @@
-import { AgentRole, OpenAIRequestBody } from '../types.ts'
-import { OPEN_AI_MODEL, OPEN_AI_MODEL_TEMPERATURE, SYSTEM_ROLE_CONTENT } from '../constants.ts'
+import { AgentRole, OpenAIRequestBody } from '../types'
+import { OPEN_AI_MODEL, OPEN_AI_MODEL_TEMPERATURE, SYSTEM_ROLE_CONTENT } from '../constants'
 
 interface GenerateOpenAIRequestParams {
   prompt: string

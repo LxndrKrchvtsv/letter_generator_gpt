@@ -1,4 +1,4 @@
-import { FormApplicationInfo } from '../types.ts'
+import { FormApplicationInfo } from '../types'
 
 export const generateApplicationPrompt = ({
   jobTitle,

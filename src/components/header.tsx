@@ -1,7 +1,7 @@
 import { ActionIcon, Flex, Image } from '@mantine/core'
 import { IconHome } from '@tabler/icons-react'
 
-import { ApplicationProgress } from '../pages/applications/applicationProgress.tsx'
+import { ApplicationProgress } from '../pages/applications/applicationProgress'
 
 const Header = () => {
   return (

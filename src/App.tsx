@@ -5,13 +5,13 @@ import '@mantine/spotlight/styles.css'
 
 import '@mantine/notifications/styles.css'
 import { Notifications } from '@mantine/notifications'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { MantineProvider } from '@mantine/core'
 import { lazy, useEffect } from 'react'
 
-import { theme } from './theme-config.ts'
-import Layout from './layout.tsx'
-import { sessionStorageService } from './services/sessionStorage.ts'
+import { theme } from './theme-config'
+import Layout from './layout'
+import { sessionStorageService } from './services/sessionStorage'
 
 const NewApplicationLazy = lazy(() => import('./pages/newApplication'))
 const ApplicationsLazy = lazy(() => import('./pages/applications'))
@@ -41,6 +41,7 @@ const App = () => {
             </Layout>
           }
         />
+        <Route path="*" element={<Navigate to="/applications" replace />} />
       </Routes>
     </MantineProvider>
   )

@@ -1,6 +1,6 @@
 import { Button, createTheme, Loader, Text } from '@mantine/core'
 
-import AnimatedSpinLoaderIcon from './components/ui/animatedSpinLoaderIcon.tsx'
+import AnimatedSpinLoaderIcon from './components/ui/animatedSpinLoaderIcon'
 
 export const theme = createTheme({
   fontFamily: 'Fixel, sans-serif',

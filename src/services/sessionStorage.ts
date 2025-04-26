@@ -1,6 +1,6 @@
 import { showNotification } from '@mantine/notifications'
 
-import { handleError } from '../utils/handleError.ts'
+import { handleError } from '../utils/handleError'
 
 const SESSION_STORAGE_KEYS = {
   GENERATED_APPLICATIONS: 'appGeneratorApplicationsGenerated',

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { OpenAIRequestBody } from '../types.ts'
+import { OpenAIRequestBody } from '../types'
 
 const URL = 'https://api.openai.com/v1/chat/completions'
 const apiKey = import.meta.env.VITE_OPENAI_API_KEY

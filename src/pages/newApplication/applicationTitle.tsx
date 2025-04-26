@@ -1,6 +1,6 @@
 import { Title } from '@mantine/core'
 
-import { NEW_APPLICATION } from '../../constants.ts'
+import { NEW_APPLICATION } from '../../constants'
 
 export interface ApplicationTitleProps {
   jobTitle?: string

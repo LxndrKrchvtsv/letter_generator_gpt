@@ -2,7 +2,7 @@ import { Button } from '@mantine/core'
 import { IconCopy, IconPlus, IconTrash } from '@tabler/icons-react'
 import { useClipboard } from '@mantine/hooks'
 
-import { COPIED, COPY_TO_CLIPBOARD } from '../../constants.ts'
+import { COPIED, COPY_TO_CLIPBOARD } from '../../constants'
 
 type component = 'a'
 type iconType = 'delete' | 'create' | 'copy'

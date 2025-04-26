@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { sessionStorageService } from '../services/sessionStorage.ts'
+import { sessionStorageService } from '../services/sessionStorage'
 
 export const useGeneratedApplications = () => {
   const [maxApplications, setMaxApplications] = useState<number>(0)

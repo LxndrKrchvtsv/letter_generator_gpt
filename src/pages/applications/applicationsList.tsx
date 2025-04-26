@@ -1,8 +1,8 @@
 import { Flex, SimpleGrid } from '@mantine/core'
 import { useEffect, useState } from 'react'
 
-import ApplicationPreview from './applicationPreview.tsx'
-import { sessionStorageService } from '../../services/sessionStorage.ts'
+import ApplicationPreview from './applicationPreview'
+import { sessionStorageService } from '../../services/sessionStorage'
 
 const ApplicationsList = () => {
   const [applications, setApplications] = useState<string[]>([])

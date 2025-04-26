@@ -1,9 +1,9 @@
 import { Divider, Flex, Group, Title } from '@mantine/core'
 
-import GoalProgressCard from './goalProgressCard.tsx'
-import ApplicationsList from './applicationsList.tsx'
-import ActionButton from '../../components/ui/actionButton.tsx'
-import { CREATE_NEW } from '../../constants.ts'
+import GoalProgressCard from './goalProgressCard'
+import ApplicationsList from './applicationsList'
+import ActionButton from '../../components/ui/actionButton'
+import { CREATE_NEW } from '../../constants'
 
 const Applications = () => {
   return (

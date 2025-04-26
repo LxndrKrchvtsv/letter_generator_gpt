@@ -1,8 +1,8 @@
-import { FormApplicationInfo, OpenAIRequestBody } from '../types.ts'
-import { generateApplicationPrompt } from './generateApplicationPrompt.ts'
-import { generateOpenAIRequestBody } from './generateOpenAIRequestBody.ts'
+import { FormApplicationInfo, OpenAIRequestBody } from '../types'
+import { generateApplicationPrompt } from './generateApplicationPrompt'
+import { generateOpenAIRequestBody } from './generateOpenAIRequestBody'
 import { fetchApplication } from '../api'
-import { handleError } from './handleError.ts'
+import { handleError } from './handleError'
 
 export const generateApplicationLetter = async (formApplicationInfo: FormApplicationInfo) => {
   const applicationPrompt: string = generateApplicationPrompt(formApplicationInfo)

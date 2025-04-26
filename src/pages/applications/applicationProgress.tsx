@@ -1,7 +1,7 @@
 import { Flex, Group, Text } from '@mantine/core'
 import { IconCircleCheckFilled, IconCircleFilled } from '@tabler/icons-react'
 
-import { useGeneratedApplications } from '../../hooks/useGeneratedApplications.ts'
+import { useGeneratedApplications } from '../../hooks/useGeneratedApplications'
 
 export const ApplicationProgress = () => {
   const { maxApplications, currentNumber } = useGeneratedApplications()
