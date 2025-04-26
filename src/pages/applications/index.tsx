@@ -5,6 +5,7 @@ import GoalProgressCard from './goalProgressCard'
 import ApplicationsList from './applicationsList'
 import ActionButton from '../../components/ui/actionButton'
 import { CREATE_NEW } from '../../constants'
+import { sessionStorageService } from '../../services/sessionStorage'
 
 const Applications = () => {
   return (
@@ -19,7 +20,7 @@ const Applications = () => {
         <Divider />
         <ApplicationsList />
       </Flex>
-      <GoalProgressCard />
+      {!sessionStorageService.reachedTheLimitApplications() && <GoalProgressCard />}
     </Flex>
   )
 }
